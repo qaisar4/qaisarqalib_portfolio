@@ -1,0 +1,196 @@
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 55%, transparent),
+    color-mix(in srgb, var(--accent-2) 25%, transparent)
+  );
+  border-radius: 2px;
+}
+
+@media (min-width: 640px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding-left: 2.25rem;
+  margin-bottom: var(--space-xl);
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .item {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 0;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .item:nth-child(odd) .marker {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .item:nth-child(odd) .card {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    text-align: right;
+  }
+
+  .item:nth-child(odd) .bullets {
+    align-items: flex-end;
+  }
+
+  .item:nth-child(odd) .bullets li {
+    text-align: left;
+  }
+
+  .item:nth-child(even) .marker {
+    grid-column: 1;
+    justify-self: end;
+  }
+
+  .item:nth-child(even) .card {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+.marker {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .marker {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+  }
+
+  .marker span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+    z-index: 1;
+  }
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  left: 0.4rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+@media (min-width: 640px) {
+  .item::before {
+    display: none;
+  }
+}
+
+.card {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  max-width: 28rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  color: var(--text-soft);
+  margin-bottom: var(--space-sm);
+}
+
+.period {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.role {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: var(--text);
+}
+
+.company {
+  margin: 0 0 var(--space-md);
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bullets li {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 70%, var(--text-muted));
+}
+
+@media (min-width: 640px) {
+  .item:nth-child(odd) .bullets li {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
+  .item:nth-child(odd) .bullets li::before {
+    left: auto;
+    right: 0;
+  }
+}
