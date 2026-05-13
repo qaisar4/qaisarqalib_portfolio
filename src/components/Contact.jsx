@@ -28,8 +28,8 @@ export function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Let's talk about your next mobile build."
-      subtitle="This form opens your email client with a pre-filled message — no server or third-party form service required."
+      title="Hiring a React Native developer or need a build partner?"
+      subtitle={`Based in Lahore, open to remote and freelance. Send a note below — your mail app opens with the subject and body filled in so you can reach me directly at ${site.email}${site.phone ? ` or ${site.phone}` : ''}.`}
     >
       <div className={styles.layout}>
         <form className={styles.form} onSubmit={handleSubmit} noValidate>

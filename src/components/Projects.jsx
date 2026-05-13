@@ -18,8 +18,8 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Projects"
-      title="Selected work and product surfaces."
-      subtitle="Descriptions are templates — link to case studies, stores, or private repos as your situation allows."
+      title="Apps users open every day — fantasy, gaming, and AI."
+      subtitle="From NHL and football fantasy to Betsson-scale gaming, Good Gaming, and TwoPercent AI’s trend analysis: shipping polished mobile UX, integrations, and performance work under NDA-friendly summaries."
     >
       <ul className={styles.grid}>
         {projects.map((project) => (

@@ -4,7 +4,12 @@ import { about } from '../data/portfolio'
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About" title="Building mobile apps that ship and scale." subtitle={about.intro}>
+    <Section
+      id="about"
+      eyebrow="About"
+      title="Senior React Native engineer focused on shipped outcomes."
+      subtitle={about.intro}
+    >
       <div className={styles.layout}>
         <div className={styles.prose}>
           {about.paragraphs.map((p, i) => (

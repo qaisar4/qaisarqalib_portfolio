@@ -7,8 +7,8 @@ export function Education() {
     <Section
       id="education"
       eyebrow="Education & certifications"
-      title="Formal background and credentials."
-      subtitle="Keep this section honest and short; recruiters often skim it after experience and projects."
+      title="Degree in software engineering, sharpened on real products."
+      subtitle="Bachelor’s from Lahore Garrison University and FSc pre-engineering form the base; Udemy courses in React and React Native keep the stack current alongside shipping apps to production."
     >
       <div className={styles.layout}>
         <div>
@@ -27,13 +27,13 @@ export function Education() {
           </ul>
         </div>
         <div>
-          <h3 className={styles.blockTitle}>Certifications</h3>
+          <h3 className={styles.blockTitle}>Courses</h3>
           <ul className={styles.certList}>
             {certifications.map((c) => (
               <li key={c.id} className={styles.cert}>
                 <span className={styles.certName}>{c.name}</span>
                 <span className={styles.certMeta}>
-                  {c.issuer} · {c.year}
+                  {c.issuer}
                 </span>
               </li>
             ))}

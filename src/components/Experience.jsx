@@ -7,8 +7,8 @@ export function Experience() {
     <Section
       id="experience"
       eyebrow="Experience"
-      title="Where I've contributed and grown."
-      subtitle="Timelines and impact are illustrative — replace with your real roles in src/data/portfolio.js."
+      title="Four years from junior mobile to senior React Native."
+      subtitle="Agency news apps, Canada-remote health tech on SenSights, production RN at TECHBUCKS, and senior work on high-traffic gaming titles at Cynosoft — leading UI, navigation, performance, and code quality."
     >
       <ol className={styles.timeline}>
         {experience.map((job) => (

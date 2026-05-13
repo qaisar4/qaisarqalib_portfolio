@@ -7,8 +7,8 @@ export function Skills() {
     <Section
       id="skills"
       eyebrow="Skills"
-      title="Tools and technologies I use day to day."
-      subtitle="Grouped by how I typically apply them on production React Native apps — swap in your exact stack in src/data/portfolio.js."
+      title="Stack tuned for production mobile — not tutorial demos."
+      subtitle="Core TypeScript and React Native, Firebase and Supabase, animations and in-app purchases, store release via TestFlight and Play Console, plus Jest and Testing Library for confidence before every ship."
     >
       <ul className={styles.grid}>
         {skills.map((group) => (
