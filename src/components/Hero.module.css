@@ -1,26 +1,55 @@
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
   padding: clamp(3rem, 8vw, 5rem) var(--page-inline) clamp(2.5rem, 6vw, var(--space-3xl));
   scroll-margin-top: var(--header-h);
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 55% at 15% 12%, color-mix(in srgb, var(--accent) 11%, transparent), transparent 58%),
+    radial-gradient(ellipse 70% 45% at 92% 28%, color-mix(in srgb, var(--accent-2) 9%, transparent), transparent 52%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 35%, transparent) 0%, transparent 42%);
+}
+
 .grid {
+  position: relative;
   max-width: var(--max);
   margin: 0 auto;
   display: grid;
-  gap: var(--space-2xl);
+  gap: clamp(1.75rem, 5vw, var(--space-2xl));
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(var(--space-xl), 4vw, var(--space-3xl));
+    /* Tighter image column on wide screens so copy + portrait feel connected */
+    grid-template-columns: minmax(0, 1.12fr) minmax(220px, min(32vw, 22rem));
+    gap: clamp(1.75rem, 4vw, 3.5rem);
     align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    gap: 3.5rem;
   }
 }
 
 .copy {
   min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .copy {
+    max-width: 38rem;
+  }
 }
 
 .kicker {
@@ -36,13 +65,14 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  flex-shrink: 0;
   background: var(--accent);
   box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .name {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 6vw, 3.35rem);
+  font-size: clamp(2.25rem, 5.5vw, 3.25rem);
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 1.08;
@@ -51,7 +81,7 @@
 
 .role {
   margin-top: var(--space-sm);
-  font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+  font-size: clamp(1.125rem, 2.2vw, 1.3rem);
   font-weight: 600;
   color: var(--accent);
 }
@@ -96,8 +126,16 @@
   margin: var(--space-xl) 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem;
+  max-width: min(100%, 22rem);
+}
+
+@media (min-width: 420px) {
+  .socials {
+    max-width: none;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  }
 }
 
 .social {
@@ -106,7 +144,7 @@
   gap: 0.15rem;
   padding: 0.6rem 0.85rem;
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 92%, var(--bg));
   border: 1px solid var(--border);
   text-decoration: none;
   color: inherit;
@@ -131,6 +169,9 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .avail {
@@ -142,6 +183,7 @@
 .visual {
   display: flex;
   justify-content: center;
+  min-width: 0;
 }
 
 @media (min-width: 768px) {
@@ -156,6 +198,17 @@
   aspect-ratio: 1;
 }
 
+.card::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: calc(28px + 5px);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.85;
+}
+
 .avatar {
   position: relative;
   z-index: 1;
@@ -164,18 +217,20 @@
   object-fit: cover;
   border-radius: 28px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--text) 6%, transparent);
 }
 
 .cardGlow {
   position: absolute;
-  inset: -18%;
+  inset: -12%;
   z-index: 0;
   background: radial-gradient(
     closest-side at 50% 45%,
-    color-mix(in srgb, var(--accent) 35%, transparent),
-    transparent 70%
+    color-mix(in srgb, var(--accent) 38%, transparent),
+    transparent 72%
   );
-  filter: blur(8px);
+  filter: blur(10px);
   pointer-events: none;
 }
