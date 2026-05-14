@@ -4,9 +4,9 @@
   align-items: start;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 768px) {
   .layout {
-    grid-template-columns: 1.2fr 0.9fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   }
 }
 

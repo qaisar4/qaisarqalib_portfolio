@@ -13,9 +13,6 @@ export function Experience() {
       <ol className={styles.timeline}>
         {experience.map((job) => (
           <li key={job.id} className={styles.item}>
-            <div className={styles.marker} aria-hidden>
-              <span />
-            </div>
             <article className={styles.card}>
               <div className={styles.meta}>
                 <span className={styles.period}>{job.period}</span>

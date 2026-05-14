@@ -17,7 +17,7 @@
 .bar {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--page-inline);
   height: 100%;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@
   display: none;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 900px) {
   .nav {
     display: block;
   }
@@ -99,6 +99,18 @@
 .navLink:hover {
   color: var(--text);
   background: var(--surface-hover);
+}
+
+.navLinkActive {
+  color: var(--text);
+  font-weight: 600;
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.navLinkActive:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface-hover));
 }
 
 .menuBtn {
@@ -195,6 +207,17 @@
 
 .drawerLink:hover {
   background: var(--surface-hover);
+}
+
+.drawerLinkActive {
+  color: var(--accent);
+  font-weight: 600;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface-hover));
+  box-shadow: inset 3px 0 0 0 var(--accent);
+}
+
+.drawerLinkActive:hover {
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface-hover));
 }
 
 .backdrop {

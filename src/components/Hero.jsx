@@ -15,19 +15,13 @@ export function Hero() {
           </h1>
           <p className={styles.role}>{site.role}</p>
           <p className={styles.tagline}>{site.tagline}</p>
-          <div className={styles.actions}>
-            <a className={styles.btnPrimary} href="#contact">
-              Get in touch
-            </a>
-            <a className={styles.btnGhost} href="#projects">
-              View projects
-            </a>
-            {site.resumePath ? (
+          {site.resumePath ? (
+            <div className={styles.actions}>
               <a className={styles.btnGhost} href={site.resumePath} download>
                 Résumé
               </a>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
           <ul className={styles.socials}>
             {site.socials.map((s) => (
               <li key={s.href}>

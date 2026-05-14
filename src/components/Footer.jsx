@@ -8,7 +8,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <p className={styles.copy}>
-          © {year} {site.firstName} {site.lastName}. Built with React & Vite — ready for Vercel.
+          © {year} {site.firstName} {site.lastName}.
         </p>
         <a href="#top" className={styles.back}>
           Back to top

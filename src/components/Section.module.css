@@ -1,16 +1,17 @@
 .section {
-  padding: var(--space-3xl) var(--space-md);
+  padding: clamp(2.5rem, 6vw, var(--space-3xl)) var(--page-inline);
   scroll-margin-top: calc(var(--header-h) + var(--space-sm));
 }
 
 .inner {
   max-width: var(--max);
   margin: 0 auto;
+  width: 100%;
 }
 
 .header {
-  margin-bottom: var(--space-2xl);
-  max-width: 42rem;
+  margin-bottom: clamp(var(--space-xl), 4vw, var(--space-2xl));
+  max-width: 40rem;
 }
 
 .eyebrow {

@@ -1,6 +1,6 @@
 .footer {
   border-top: 1px solid var(--border);
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-xl) var(--page-inline);
   background: color-mix(in srgb, var(--bg-elevated) 60%, var(--bg));
 }
 
