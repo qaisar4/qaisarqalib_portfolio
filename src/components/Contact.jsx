@@ -87,12 +87,6 @@ export function Contact() {
     >
       <div className={styles.layout}>
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
-          <p className={styles.formIntro}>
-            <strong>Your details</strong> — the person visiting this portfolio enters their name, email, and
-            message here. Nothing is stored on this site; clicking send opens <em>your</em> email app with a
-            draft addressed to {site.firstName}.
-          </p>
-
           <label className={styles.field}>
             <span className={styles.label}>Your name</span>
             <input
