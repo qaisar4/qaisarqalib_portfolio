@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import styles from './Header.module.css'
 import { site } from '../data/portfolio'
 
@@ -117,36 +118,45 @@ export function Header() {
         </button>
       </div>
 
-      <div
-        id="mobile-drawer"
-        className={`${styles.drawer} ${open ? styles.drawerOpen : ''}`}
-        aria-hidden={!open}
-      >
-        <nav aria-label="Mobile">
-          <ul className={styles.drawerList}>
-            {NAV.map((item) => {
-              const id = item.href.slice(1)
-              const isActive = activeId === id
-              return (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className={`${styles.drawerLink} ${isActive ? styles.drawerLinkActive : ''}`}
-                    aria-current={isActive ? 'page' : undefined}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      </div>
-
-      {open ? (
-        <button type="button" className={styles.backdrop} aria-label="Close menu" onClick={() => setOpen(false)} />
-      ) : null}
+      {createPortal(
+        <>
+          {open ? (
+            <button
+              type="button"
+              className={styles.backdrop}
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+            />
+          ) : null}
+          <div
+            id="mobile-drawer"
+            className={`${styles.drawer} ${open ? styles.drawerOpen : ''}`}
+            aria-hidden={!open}
+          >
+            <nav aria-label="Mobile">
+              <ul className={styles.drawerList}>
+                {NAV.map((item) => {
+                  const id = item.href.slice(1)
+                  const isActive = activeId === id
+                  return (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        className={`${styles.drawerLink} ${isActive ? styles.drawerLinkActive : ''}`}
+                        aria-current={isActive ? 'page' : undefined}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </nav>
+          </div>
+        </>,
+        document.body,
+      )}
     </header>
   )
 }

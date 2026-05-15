@@ -169,14 +169,18 @@
 
 .drawer {
   position: fixed;
-  inset: var(--header-h) 0 0 auto;
+  top: var(--header-h);
+  right: 0;
+  bottom: 0;
   width: min(88vw, 18rem);
   background: var(--bg-elevated);
   border-left: 1px solid var(--border);
   padding: var(--space-lg);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateX(100%);
   transition: transform 0.22s ease;
-  z-index: 102;
+  z-index: 1002;
 }
 
 .drawer.drawerOpen {
@@ -222,9 +226,12 @@
 
 .backdrop {
   position: fixed;
-  inset: var(--header-h) 0 0 0;
+  top: var(--header-h);
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.55);
-  z-index: 101;
+  z-index: 1001;
   border: none;
   cursor: pointer;
   padding: 0;
