@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "cp src/assets/images/favIcon.png public/favicon.png",
     "build": "vite build",
+    "prebuild": "cp src/assets/images/favIcon.png public/favicon.png",
     "lint": "eslint .",
     "preview": "vite preview"
   },
