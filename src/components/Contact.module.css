@@ -17,6 +17,27 @@
   border: 1px solid var(--border);
 }
 
+.formIntro {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+}
+
+.formIntro strong {
+  color: var(--text);
+}
+
+.formIntro em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+}
+
 .field {
   display: flex;
   flex-direction: column;
@@ -28,6 +49,26 @@
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text-muted);
+}
+
+.required {
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: #f87171;
+  line-height: 1.4;
+}
+
+.inputError {
+  border-color: color-mix(in srgb, #f87171 55%, var(--border));
+}
+
+.inputError:focus {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #f87171 22%, transparent);
 }
 
 .input,
