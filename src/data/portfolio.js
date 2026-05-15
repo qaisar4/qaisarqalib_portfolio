@@ -1,7 +1,5 @@
-/**
- * All portfolio content is local — edit this file to personalize.
- * Replace placeholder text, links, and add your avatar to /public/avatar.svg
- */
+
+import avatarSrc from '../assets/images/qaisar.jpeg'
 
 export const site = {
   firstName: 'Qaisar',
@@ -14,9 +12,7 @@ export const site = {
   email: 'qaisarqalib123@gmail.com',
   phone: '+92 302 4595017',
   availability: 'Open to remote roles & freelance',
-  /** Optional: set to '/avatar.svg' after adding your photo (see public/avatar.svg placeholder) */
-  avatarSrc: '/avatar.svg',
-  /** Set to '/resume.pdf' after adding the file under public/ */
+  avatarSrc,
   resumePath: null,
   socials: [
     { label: 'GitHub', href: 'https://github.com/qaisar4', handle: '@qaisar4' },
