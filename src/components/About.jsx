@@ -12,10 +12,13 @@ export function About() {
     >
       <div className={styles.layout}>
         <div className={styles.prose}>
-          {about.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
+          {about.paragraphs.map((paragraph, index) => (
+            <p key={index} className={styles.paragraph}>
+              {paragraph}
+            </p>
           ))}
         </div>
+
         <ul className={styles.highlights}>
           {about.highlights.map((item) => (
             <li key={item.title} className={styles.card}>
