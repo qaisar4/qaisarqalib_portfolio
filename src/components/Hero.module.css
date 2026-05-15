@@ -1,5 +1,5 @@
 .hero {
-  padding: clamp(2rem, 5vw, 3.5rem) var(--page-inline) clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 5vw, 3.5rem) var(--page-inline) 0;
   scroll-margin-top: var(--header-h);
 }
 

@@ -1,6 +1,6 @@
 .section {
-  /* All content sections use exactly the same top and bottom breathing room */
-  padding: clamp(3rem, 6vw, 5rem) var(--page-inline);
+  /* Vertical spacing between sections comes from main { gap } */
+  padding: 0 var(--page-inline);
   scroll-margin-top: calc(var(--header-h) + var(--space-sm));
 }
 
@@ -11,7 +11,7 @@
 }
 
 .header {
-  margin-bottom: clamp(var(--space-xl), 4vw, var(--space-2xl));
+  margin-bottom: var(--space-2xl);
   max-width: 52rem;
 }
 

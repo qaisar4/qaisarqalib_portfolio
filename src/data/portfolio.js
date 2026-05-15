@@ -33,7 +33,7 @@ export const about = {
   ],
   highlights: [
     { title: 'Mobile delivery', detail: 'React Native, TypeScript, hooks, navigation, REST APIs, Firebase & Supabase.' },
-    { title: 'Quality & release', detail: 'Jest, React Native Testing Library, TestFlight, Google Play Console.' },
+    { title: 'Quality & release', detail: 'React Native Testing Library, TestFlight, Google Play Console.' },
     { title: 'Team player', detail: 'Clear communication, problem solving, and proactive collaboration.' },
   ],
 }
