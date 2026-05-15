@@ -185,12 +185,12 @@ export const education = [
 export const certifications = [
   {
     id: 'c1',
-    name: 'Advanced React & Redux',
-    issuer: 'W3 Schools',
+    name: 'React & Redux Fundamentals',
+    issuer: 'W3Schools',
   },
   {
     id: 'c2',
-    name: 'React Native Crash Course — fundamentals through advanced concepts',
+    name: 'React Native Crash Course — Fundamentals through Advanced Concepts',
     issuer: 'Coursera',
   },
 ]
